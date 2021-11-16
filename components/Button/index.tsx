@@ -12,7 +12,7 @@ const colors = {
 interface ButtonProps {
   disabled?: boolean;
   color?: keyof typeof colors;
-  //onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
   className?: string;
 }
 
