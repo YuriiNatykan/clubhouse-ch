@@ -17,7 +17,7 @@ export const WelcomeStep: React.FC = () => {
       </h3>
       <p>
         We’re working hard to get Clubhouse ready for everyone! While we wrap up the finishing
-        youches, we’re adding people gradually to make sure nothing breaks :)
+        youches, we’re adding people gradually to make sure nothing breaks :')'
       </p>
       <div>
         <Button onClick={onNextStep}>
