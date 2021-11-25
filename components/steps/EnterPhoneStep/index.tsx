@@ -6,6 +6,7 @@ import { Button } from '../../Button';
 import { StepInfo } from '../../StepInfo';
 
 import styles from './EnterPhoneStep.module.scss';
+import { MainContext } from '../../../pages';
 
 type InputValueState = {
   formattedValue: string;
@@ -14,6 +15,8 @@ type InputValueState = {
 
 
 export const EnterPhoneStep = () => {
+  const { onNextStep } = React.useContext(MainContext);
+
   const [values, setValues] = React.useState<InputValueState>({} as InputValueState);
   //дизейбл кнопки если номер не введен или введен не полностью
   const nextDisabled = !values.formattedValue || values.formattedValue.includes('_');
@@ -38,7 +41,7 @@ export const EnterPhoneStep = () => {
             onValueChange={({ formattedValue, value }) => setValues({ formattedValue, value })}
           />
         </div>
-        <Button disabled={nextDisabled}>
+        <Button onClick={onNextStep} disabled={nextDisabled}>
           Next
           <img className="d-ib ml-10" src="/static/arrow.svg" />
         </Button>

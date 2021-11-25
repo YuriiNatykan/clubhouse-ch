@@ -1,4 +1,5 @@
 import clsx from 'clsx';
+import { AnyARecord } from 'dns';
 import React from 'react';
 
 import styles from './Button.module.scss';
@@ -12,7 +13,7 @@ const colors = {
 interface ButtonProps {
   disabled?: boolean;
   color?: keyof typeof colors;
-  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  onClick?:any// (event: React.MouseEvent<HTMLButtonElement>) => void;
   className?: string;
 }
 

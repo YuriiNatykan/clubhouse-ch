@@ -8,12 +8,19 @@ import React from 'react';
 import { MainContext } from '../../../pages';
 
 export const EnterNameStep = () => {
-  const [inputValue, setInputVale] = React.useState<string>('');
+  
+  const [inputValue, setInputValue] = React.useState<string>('');
   const { onNextStep } = React.useContext(MainContext);
 
 
   const nextDisabled = !inputValue;
-  const onClickNextStep = () => {};
+
+  const handleChangeInput = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setInputValue(event.target.value)
+  }
+  const onClickNextStep = () => {
+    onNextStep();
+  };
 
   return (
     <div className={styles.block}>
@@ -25,7 +32,8 @@ export const EnterNameStep = () => {
       <WhiteBlock className={clsx('m-auto', styles.whiteBlock)}>
         <div className="mt-30 mb-30">
           <input
-          value={inputValue}
+            onChange={handleChangeInput}
+            value={inputValue}
             className="field"
             placeholder="Enter fullname"
           />

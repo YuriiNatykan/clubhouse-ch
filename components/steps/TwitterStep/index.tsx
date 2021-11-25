@@ -5,8 +5,11 @@ import { StepInfo } from '../../StepInfo';
 
 import styles from './TwitterStep.module.scss';
 import React from 'react';
+import { MainContext } from '../../../pages';
 
 export const TwitterStep: React.FC = () => {
+  const { onNextStep } = React.useContext(MainContext);
+
   return (
     <div className={styles.block}>
       <StepInfo icon='/static/connect.png' title='Do you want import info from Twitter?' />
@@ -27,7 +30,7 @@ export const TwitterStep: React.FC = () => {
           </svg>
         </div>
         <h2 className='mb-40'>Maksym Makiaveli</h2>
-        <Button>
+        <Button onClick={onNextStep}>
           <img src='/static/twitter.svg' alt='Twitter logo' className={styles.twitterLogo} />
           Import from Twitter
           <img className='d-ib ml-10' src='/static/arrow.svg' />

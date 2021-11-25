@@ -9,6 +9,8 @@ import { MainContext } from '../../../pages';
 
 export const WelcomeStep: React.FC = () => {
   const { onNextStep } = React.useContext(MainContext);
+  
+
   return (
     <WhiteBlock className={styles.block}>
       <h3 className={styles.title}>
@@ -27,5 +29,6 @@ export const WelcomeStep: React.FC = () => {
       </div>
       <div className='link mt-15 cup d-ib'>Have an invite text? Sign in</div>
     </WhiteBlock>
+    
   );
 };
