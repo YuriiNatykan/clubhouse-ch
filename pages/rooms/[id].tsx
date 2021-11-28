@@ -8,7 +8,10 @@ import { Room } from '../../components/Room';
 export default function RoomPage({ room }) {
   return (
     <>
-      <Header avatarUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWb0scT2J6qrIzEaSqw8l4OPB7Bi1wWR_pXQ&usqp=CAU" />
+      <Header
+        avatarUrl="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWb0scT2J6qrIzEaSqw8l4OPB7Bi1wWR_pXQ&usqp=CAU"
+        fullname="Natykan Yurii"
+      />
       <div className="container mt-40">
         <h2>All rooms</h2>
         <BackButton title="Back" href="/rooms" />

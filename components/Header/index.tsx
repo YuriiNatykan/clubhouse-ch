@@ -7,9 +7,10 @@ import styles from './Header.module.scss';
 
 interface HeaderProps {
   avatarUrl: string;
+  fullname: string;
 }
 
-export const Header: React.FC<HeaderProps> = ({ avatarUrl }) => {
+export const Header: React.FC<HeaderProps> = ({ avatarUrl, fullname }) => {
   return (
     <div className={styles.header}>
       <div className="container d-flex align-items-center justify-content-between">
@@ -21,7 +22,7 @@ export const Header: React.FC<HeaderProps> = ({ avatarUrl }) => {
         </Link>
         <Link href="/profile/1">
           <div className="d-flex align-items-center cup">
-            <b className="mr-5">Archakov Dennis</b>
+            <b className="mr-5">{fullname}</b>
             <Avatar src={avatarUrl} width="50px" height="50px" />
           </div>
         </Link>
